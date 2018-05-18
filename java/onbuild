@@ -2,7 +2,7 @@
 
 # install java jdk
 apt-get update -q
-apt-get install -qy openjdk-8-jdk
+apt-get install -qy --no-install-recommends openjdk-8-jdk
 rm -rf /var/lib/apt/lists/*
 
 # configure R for Java
