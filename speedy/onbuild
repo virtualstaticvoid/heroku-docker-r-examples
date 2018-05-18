@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# install java jdk
+apt-get update -q
+apt-get install -qy --no-install-recommends openjdk-8-jdk
+rm -rf /var/lib/apt/lists/*
+
+# configure R for Java
+R CMD javareconf &> /dev/null
+
+# naive compile of Java program (working directory is /app)
+javac *.java
