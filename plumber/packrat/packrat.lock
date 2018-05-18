@@ -1,0 +1,73 @@
+PackratFormat: 1.4
+PackratVersion: 0.4.9.2
+RVersion: 3.4.4
+Repos: CRAN=https://cloud.r-project.org
+
+Package: BH
+Source: CRAN
+Version: 1.66.0-1
+Hash: 4cc8883584b955ed01f38f68bc03af6d
+
+Package: R6
+Source: CRAN
+Version: 2.2.2
+Hash: b2366cd9d2f3851a5704b4e192b985c2
+
+Package: Rcpp
+Source: CRAN
+Version: 0.12.17
+Hash: d2eff4634ccd7aca030c540ad805ac4a
+
+Package: crayon
+Source: CRAN
+Version: 1.3.4
+Hash: ff2840dd9b0d563fc80377a5a45510cd
+
+Package: httpuv
+Source: CRAN
+Version: 1.4.3
+Hash: 3159c5d903ea7330e61fb494660f3c2c
+Requires: BH, Rcpp, later, promises
+
+Package: jsonlite
+Source: CRAN
+Version: 1.5
+Hash: 9c51936d8dd00b2f1d4fe9d10499694c
+
+Package: later
+Source: CRAN
+Version: 0.7.2
+Hash: 44065b8dc9aec795102f2e5d572d2d9a
+Requires: BH, Rcpp, rlang
+
+Package: magrittr
+Source: CRAN
+Version: 1.5
+Hash: bdc4d48c3135e8f3b399536ddf160df4
+
+Package: packrat
+Source: CRAN
+Version: 0.4.9-2
+Hash: 47dbd4e04dcd01da02a2021203205cb1
+
+Package: plumber
+Source: CRAN
+Version: 0.4.4
+Hash: f19938cb285dcf36a63f00f762d563c5
+Requires: R6, crayon, httpuv, jsonlite, stringi
+
+Package: promises
+Source: CRAN
+Version: 1.0.1
+Hash: 509b401b28dbb35bb5cdd52b26f70855
+Requires: R6, Rcpp, later, magrittr, rlang
+
+Package: rlang
+Source: CRAN
+Version: 0.2.0
+Hash: 647e2e50a72557d1a770dcd6701e562b
+
+Package: stringi
+Source: CRAN
+Version: 1.2.2
+Hash: 09671b4a90b75927272d2b2ba6c0d6ed
