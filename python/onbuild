@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# NOTE: Ubuntu 16.04 not fully supporting python3
+
+# install python setuptools
+apt-get update -q
+apt-get install -qy --no-install-recommends python-setuptools
+rm -rf /var/lib/apt/lists/*
+
+# install pip; ignore outputs
+easy_install pip &> /dev/null
+
+# install dependencies (in requirements.txt)
+pip install -r requirements.txt
