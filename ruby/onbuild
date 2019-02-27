@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# install java jdk
+apt-get update -q
+apt-get install -qy --no-install-recommends ruby
+rm -rf /var/lib/apt/lists/*
+
+gem install bundler --no-document
+
+export BUNDLE_SILENCE_ROOT_WARNING=1 # disable warning about running bundler as root
+bundle install
