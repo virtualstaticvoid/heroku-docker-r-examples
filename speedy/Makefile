@@ -2,22 +2,18 @@
 all::
 
 all:: build
-.PHONY: all
+.PHONY: all build run
 
-build-base:
+APP:=$(shell basename $(PWD))
+
+build:
 
 	docker build \
 		--tag virtualstaticvoid/heroku-docker-r-examples:rjava \
 		--file Dockerfile.base .
 
-push-base:
-
-	docker push virtualstaticvoid/heroku-docker-r-examples:rjava
-
-build:
-
-	docker build --tag heroku-docker-r-example:speedy .
+	docker build --tag heroku-docker-r-example:$(APP) .
 
 run:
 
-	docker run -it heroku-docker-r-example:speedy
+	docker run -it --rm heroku-docker-r-example:$(APP)
