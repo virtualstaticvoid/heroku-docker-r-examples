@@ -1,8 +1,11 @@
 #!/bin/bash
 
-# install java jdk
+export DEBIAN_FRONTEND=noninteractive
+
+# install ruby
 apt-get update -q
 apt-get install -qy --no-install-recommends ruby
+apt-get clean
 rm -rf /var/lib/apt/lists/*
 
 gem install bundler --no-document
