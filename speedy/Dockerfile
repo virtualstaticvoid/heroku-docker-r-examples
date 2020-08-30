@@ -7,4 +7,4 @@ FROM virtualstaticvoid/heroku-docker-r-examples:rjava
 COPY . /app
 
 # override the base image CMD
-CMD ["/usr/bin/R", "--no-save", "-f /app/app.R"]
+CMD ["/usr/bin/R", "--no-save", "-f", "/app/app.R"]
