@@ -6,14 +6,23 @@ all:: build
 
 APP:=$(shell basename $(PWD))
 
-build:
+pre-build:
 
 	docker build \
-		--tag virtualstaticvoid/heroku-docker-r-examples:rjava \
+		--tag ghcr.io/virtualstaticvoid/heroku-docker-r-examples:$(APP)-base \
 		--file Dockerfile.base .
 
-	docker build --tag heroku-docker-r-example:$(APP) .
+build: pre-build
+
+	docker build \
+			--tag heroku-docker-r-example:$(APP) \
+			--build-arg APP=$(APP) \
+			.
 
 run:
 
 	docker run -it --rm heroku-docker-r-example:$(APP)
+
+publish:
+
+	docker push ghcr.io/virtualstaticvoid/heroku-docker-r-examples:$(APP)-base

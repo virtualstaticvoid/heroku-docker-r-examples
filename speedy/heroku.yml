@@ -1,3 +1,5 @@
 build:
   docker:
     console: Dockerfile
+  config:
+    APP: speedy
