@@ -1,5 +1,5 @@
 # use our pre-built image, which includes the JDK, and our Java program
-FROM virtualstaticvoid/heroku-docker-r-examples:rjava
+FROM ghcr.io/virtualstaticvoid/heroku-docker-r-examples:rjava
 
 # replace the application files, presumably with more recent ones,
 # since for the sake of this example, they change more frequently

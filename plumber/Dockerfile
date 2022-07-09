@@ -1,4 +1,4 @@
-FROM virtualstaticvoid/heroku-docker-r:build
+FROM ghcr.io/virtualstaticvoid/heroku-docker-r:build
 
 # ONBUILD will copy application files into the container
 #  and execute init.R (if it exists) and restore packrat packages (if they exist)
