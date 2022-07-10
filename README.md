@@ -4,6 +4,8 @@ This repository containers a number of example [R][rproject] applications, which
 
 These applications can be used as templates for your own R applications.
 
+See the README in each example's directory for further information.
+
 ## License
 
 MIT License. Copyright (c) 2018 Chris Stefano. See [MIT_LICENSE](MIT_LICENSE) for details.
