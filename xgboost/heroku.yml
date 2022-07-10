@@ -1,0 +1,5 @@
+build:
+  docker:
+    console: Dockerfile
+  config:
+    APP: xgboost
