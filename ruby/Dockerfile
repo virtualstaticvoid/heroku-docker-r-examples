@@ -5,5 +5,7 @@ FROM ghcr.io/virtualstaticvoid/heroku-docker-r:build
 
 ENV PORT=8080
 
+ENV RACK_ENV=production
+
 # override the base image CMD
-CMD ["/bin/sh", "-c", "bundle exec rackup --host 0.0.0.0 --port ${PORT}"]
+CMD ["/bin/bash", "-l", "-c", "bundle exec thin start -R config.ru -e ${RACK_ENV} -a 0.0.0.0 -p ${PORT}"]

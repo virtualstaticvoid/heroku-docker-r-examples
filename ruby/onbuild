@@ -1,14 +1,50 @@
 #!/bin/bash
 
+set -e
+
 export DEBIAN_FRONTEND=noninteractive
 
-# install ruby
+# install dependencies
 apt-get update -q
-apt-get install -qy --no-install-recommends ruby
+apt-get install -qy --no-install-recommends \
+  autoconf \
+  automake \
+  bison \
+  curl \
+  g++ \
+  gcc \
+  git \
+  libc6-dev \
+  libffi-dev \
+  libgdbm-dev \
+  libgmp-dev \
+  libncurses5-dev \
+  libreadline-dev \
+  libsqlite3-dev \
+  libssl-dev \
+  libtool \
+  libyaml-dev \
+  make \
+  pkg-config \
+  ruby \
+  sqlite3 \
+  zlib1g-dev
 apt-get clean
 rm -rf /var/lib/apt/lists/*
 
+# install RVM
+gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+curl -sSL https://get.rvm.io | bash -s stable
+source /etc/profile.d/rvm.sh
+
+# install Ruby
+rvm install ruby-3.1.0
+rvm use ruby-3.1.0
 gem install bundler --no-document
 
+# install project dependencies
 export BUNDLE_SILENCE_ROOT_WARNING=1 # disable warning about running bundler as root
 bundle install
+
+# config
+rvm rvmrc warning ignore allGemfiles
