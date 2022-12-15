@@ -5,11 +5,13 @@ all:: build
 .PHONY: all build run
 
 APP:=$(shell basename $(PWD))
+BASE_IMAGE:=ghcr.io/virtualstaticvoid/heroku-docker-r-examples:$(APP)-base
 
 pre-build:
 
 	docker build \
-		--tag ghcr.io/virtualstaticvoid/heroku-docker-r-examples:$(APP)-base \
+		--pull \
+		--tag $(BASE_IMAGE) \
 		--file Dockerfile.base .
 
 build: pre-build
@@ -25,4 +27,4 @@ run:
 
 publish:
 
-	docker push ghcr.io/virtualstaticvoid/heroku-docker-r-examples:$(APP)-base
+	docker push $(BASE_IMAGE)
